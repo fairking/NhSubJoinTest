@@ -35,11 +35,11 @@ namespace NhSubJoinTest.Controllers
 		[Route("company_invoices")]
 		public IEnumerable<Invoice> GetInvoicesFromCompany()
 		{
-			var result = _session.Query<Company>().ToList();
+			var company = _session.Query<Company>().ToList().First();
 
-			var allDocs = result.First().Documents.ToList();
+			var allDocs = company.Documents.ToList();
 
-			var invoices = result.First().Invoices.ToList();
+			var invoices = company.Invoices.ToList();
 
 			return invoices;
 		}
