@@ -1,5 +1,6 @@
 ﻿using NHibernate.Mapping.ByCode;
 using NHibernate.SimpleMapping.Attributes;
+using NHibernate.SimpleMapping.Generators;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -13,7 +14,7 @@ namespace NhSubJoinTest.Data.Entities
 
 		public Company(string name)
         {
-			Id = Guid.NewGuid();
+			Id = IdentityGenerator.WebHash();
 
 			if (string.IsNullOrWhiteSpace(name))
 				throw new ArgumentNullException(nameof(name));
@@ -21,8 +22,8 @@ namespace NhSubJoinTest.Data.Entities
 			Name = name;
 		}
 
-		[Key]
-		public virtual Guid Id { get; protected set; }
+		[Key, Length(32), Ansi]
+		public virtual string Id { get; protected set; }
 
 		[Length(150)]
 		public virtual string Name { get; protected set; }

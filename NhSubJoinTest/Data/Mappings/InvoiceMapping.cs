@@ -7,8 +7,8 @@ namespace NhSubJoinTest.Data.Mappings
     {
         public InvoiceMapping()
         {
-            Lazy(true);
             DiscriminatorValue(DocumentTypeEnum.Invoice.ToString());
+
             Property(p => p.InvoiceTotal);
         }
     }

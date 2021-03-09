@@ -7,8 +7,8 @@ namespace NhSubJoinTest.Data.Mappings
     {
         public OrderMapping()
         {
-            Lazy(true);
             DiscriminatorValue(DocumentTypeEnum.Order.ToString());
+
             Property(p => p.OrderTotal);
         }
     }

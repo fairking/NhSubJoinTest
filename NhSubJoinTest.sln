@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhSubJoinTest", "NhSubJoinTest\NhSubJoinTest.csproj", "{5F6E5CC6-DDE7-4FA8-9F7C-FBD3ABCC432F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHibernate.SimpleMapping", "..\nhibernate.simplemapping\src\NHibernate.SimpleMapping\NHibernate.SimpleMapping.csproj", "{36FA2223-1DED-4001-B766-D7D8EA618205}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{5F6E5CC6-DDE7-4FA8-9F7C-FBD3ABCC432F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F6E5CC6-DDE7-4FA8-9F7C-FBD3ABCC432F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F6E5CC6-DDE7-4FA8-9F7C-FBD3ABCC432F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36FA2223-1DED-4001-B766-D7D8EA618205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36FA2223-1DED-4001-B766-D7D8EA618205}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36FA2223-1DED-4001-B766-D7D8EA618205}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36FA2223-1DED-4001-B766-D7D8EA618205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,15 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="NHibernate" Version="5.3.6" />
+    <PackageReference Include="NHibernate.SimpleMapping" Version="1.0.17" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.113.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\nhibernate.simplemapping\src\NHibernate.SimpleMapping\NHibernate.SimpleMapping.csproj" />
   </ItemGroup>
 
 

@@ -3,11 +3,12 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Mapping.ByCode;
 using NHibernate.SimpleMapping;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace NhSubJoinTest.StartupExtensions
 {
-	public static class NHibernateExtensions
+	public static class NHibernateConfig
 	{
 		public static IServiceCollection AddNHibernate(this IServiceCollection services, string connectionString)
 		{
@@ -22,11 +23,14 @@ namespace NhSubJoinTest.StartupExtensions
 
 			var mapper = new ModelMapper();
 
-			// Simple Mapping
-			var simpleMappingMaps = MapScanner.Scan(new[] { Assembly.GetExecutingAssembly() });
-			mapper.AddMappings(simpleMappingMaps);
+			// Uncomment it to use SimpleMapping instead of MapByCode
+			//var simpleMappingMaps = MapScanner.Scan(new[] { Assembly.GetExecutingAssembly() });
+			//mapper.AddMappings(simpleMappingMaps);
 
-			mapper.AddMappings(Assembly.GetExecutingAssembly().GetExportedTypes());
+			// Uncomment it to use MapByCode instead of SimpleMapping
+			var nhTypes = Assembly.GetExecutingAssembly().GetExportedTypes();
+			mapper.AddMappings(nhTypes);
+
 			cfg.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
 
 			services.AddSingleton(cfg);

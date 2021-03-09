@@ -1,4 +1,5 @@
 ﻿using NHibernate.SimpleMapping.Attributes;
+using NHibernate.SimpleMapping.Generators;
 using System;
 
 namespace NhSubJoinTest.Data.Entities
@@ -13,7 +14,7 @@ namespace NhSubJoinTest.Data.Entities
 
 		protected Document(Company company, string refNumber, string title)
 		{
-			Id = Guid.NewGuid();
+			Id = IdentityGenerator.WebHash();
 
 			if (string.IsNullOrWhiteSpace(refNumber))
 				throw new ArgumentNullException(nameof(refNumber));
@@ -28,8 +29,8 @@ namespace NhSubJoinTest.Data.Entities
 			Company = company ?? throw new ArgumentNullException(nameof(company));
 		}
 
-		[Key]
-		public virtual Guid Id { get; protected set; }
+		[Key, Length(32), Ansi]
+		public virtual string Id { get; protected set; }
 
 		[Length(50)]
 		public virtual string RefNumber { get; protected set; }
