@@ -15,6 +15,7 @@ namespace NhSubJoinTest.Data.Mappings
             {
                 x.Generator(Generators.Assigned);
                 x.Type(NHibernateUtil.AnsiString);
+                x.Length(32);
             });
 
             Property(x => x.Name, x =>
@@ -30,8 +31,10 @@ namespace NhSubJoinTest.Data.Mappings
                 x.Key(x =>
                 {
                     x.Column(nameof(Document.Company));
-                    x.NotNullable(true);
                 });
+            }, m =>
+            {
+                m.OneToMany();
             });
 
             Set(x => x.Invoices, x =>
@@ -41,8 +44,10 @@ namespace NhSubJoinTest.Data.Mappings
                 x.Key(x =>
                 {
                     x.Column(nameof(Document.Company));
-                    x.NotNullable(true);
                 });
+            }, m =>
+            {
+                m.OneToMany();
             });
 
             Set(x => x.Orders, x =>
@@ -52,8 +57,10 @@ namespace NhSubJoinTest.Data.Mappings
                 x.Key(x =>
                 {
                     x.Column(nameof(Document.Company));
-                    x.NotNullable(true);
                 });
+            }, m =>
+            {
+                m.OneToMany();
             });
         }
     }

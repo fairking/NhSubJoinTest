@@ -41,6 +41,7 @@ namespace NhSubJoinTest.Data.Mappings
             ManyToOne(x => x.Company, x =>
             {
                 x.Column(nameof(Document.Company));
+                x.NotNullable(true);
             });
         }
     }
